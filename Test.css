@@ -1,0 +1,35 @@
+.col .p-3{
+    background: #00F260;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0575E6, #00F260);
+    height: 160px;
+    width: 180px;
+    color: #fff;
+    font-size: 50px!important;
+}
+.navbar{
+    background: #00F260;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0575E6, #00F260); 
+  
+    text-align: center;
+    height:50px;
+  }
+  .jumbotron{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1adc88;
+    color: #f4f4f4;
+    font-size: 25px!important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#1adc88;
+    color: white;
+    text-align: center;
+  }
