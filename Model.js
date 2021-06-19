@@ -75,12 +75,6 @@ function CheckMoisture(){
                     });
             }
 
-
-
-
-
-
-
           }
       })
 }
