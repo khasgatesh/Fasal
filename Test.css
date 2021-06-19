@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+*{
+  font-family: 'Poppins',sans-serif;
+
+}
 .col .p-3{
     background: #00F260;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
@@ -14,6 +19,7 @@
   
     text-align: center;
     height:50px;
+    border-bottom: 2px solid #fff;
   }
   .jumbotron{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -32,4 +38,7 @@
     background-color:#1adc88;
     color: white;
     text-align: center;
+  }
+  i{
+    color:#000;
   }
