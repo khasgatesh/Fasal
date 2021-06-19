@@ -6,8 +6,10 @@ AWS.config.update({
   });
   var docClient = new AWS.DynamoDB.DocumentClient();
  
+  
   function Checktemperature(){
-    
+    const select = document.querySelector('#select');
+    const choice=select.value
     var params = {
         TableName: "nodemcu2db"
       };
@@ -36,18 +38,23 @@ AWS.config.update({
             var Average_Temp = Temperature / z.length
              
              var Celsius=(Average_Temp)/10
-             console.log(Celsius)
+            
              document.getElementById('ideal').innerHTML="Current Temperature :"+" "+ Celsius.toFixed(2)+"&#8451;"
+             if(choice==="sugarcane"){
             if(Celsius>24){
                  $('button').click(function(){
                $('#myModal').modal('show');
                });
             }
-
+          }
          }
   }) 
 }
 function CheckMoisture(){
+
+
+  const select = document.querySelector('#select');
+  const choice=select.value
     var params = {
         TableName: "nodemcu2db"
       };
@@ -69,6 +76,7 @@ function CheckMoisture(){
 
             var Average_moisture=Total_moisture/z.length
             document.getElementById('Moist').innerHTML="Current Moisture:"+" "+ Average_moisture.toFixed(2)+"%"
+            if(choice=="sugarcane"){
             if(Average_moisture<24){
                 $('button').click(function(){
                     $('#Sugarcane').modal('show');
@@ -76,5 +84,6 @@ function CheckMoisture(){
             }
 
           }
+        }
       })
 }

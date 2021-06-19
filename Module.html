@@ -42,28 +42,18 @@
      
        
            
-              <!-- <div class="col-md-6 mb-6">
-                <img src="./Thermo meter.svg" alt="Temperature" class="img-fluid" width="100px">
-                <br>
-                <button class="btn btn-outline-primary" onclick="Checktemperature(); return false;">Check Temperature</button>
-             </div>
-
              
-             <div class="col-md-6 mb-6">
-                <img src="./wet-svgrepo-com.svg" alt="Temperature" class="img-fluid" width="100px">
-                <br>
-                <button class="btn btn-outline-primary" onclick="CheckMoisture(); return false;">Check Moisture</button>
-             </div> -->
-             <div class="container">            
+             <div class="container">    
+                <div class="row">
+                  <select class="form-select form-control col-4" aria-label="Default select example" id="select">
+                    <option selected>Open this select menu</option>
+                    <option value="sugarcane">SugarCane</option>
+                    <option value="cotton">Cotton</option>
+                    <option value="jowar">Jowar</option>
+                  </select>
+                </div>
                 <div class="row content">
-             <!-- <div class="row" id="status">
-              <div class="col-4"><img src="./Thermo meter.svg"/>
-              <button class="btn btn-outline-primary">Check Temperature</button></div>
-               <div class="col-4"></div>
-              <div class="col-4"><img src="./humidity-svgrepo-com.svg"/>
-                <button class="btn btn-outline-primary">Check Moisture</button>
-              </div>
-          </div> -->
+                 
           <div class="col-xs-12 col-md-8">
             <div class="row">
              <div class="col-xs-4 col-md-3">
@@ -126,6 +116,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         
         </div>
+        
         <div class="modal-body">
             <p class="h4">Moisture</p>
 
