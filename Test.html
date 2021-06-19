@@ -58,19 +58,20 @@
  
 
 <br>
+<p class="h4">Average and Maximum Values</p>
 <br>
 
 <div class="container px-4">
     <div class="row gx-5">
       <div class="col">
         <div  style="height:200px;width:200px" id="canvas">
-            <h4>Humidity </h4>
+          
             <canvas id="hum"></canvas>
           </div>
       </div>
       <div class="col">
         <div  style="height:200px;width:200px" id="canvas">
-            <h4>Moisture </h4>
+            
             <canvas id="moist">
             
             </canvas>
@@ -79,12 +80,43 @@
       </div>
       <div class="col">
         <div  style="height:200px;width:200px" id="canvas">
-            <h4>Temperature </h4>
+           
             <canvas id="temp"></canvas>
           </div>
         </div>
     </div>
  </div>
+<br>
+
+<p class="h4">Distribution of Sensor Values</p>
+<br>
+ <div class="container px-4">
+  <div class="row gx-5">
+    <div class="col">
+      <div  style="height:200px;width:200px" id="canvas">
+         
+          <canvas id="Hum"></canvas>
+        </div>
+    </div>
+    <div class="col">
+      <div  style="height:200px;width:200px" id="canvas">
+        
+          <canvas id="Moist">
+          
+          </canvas>
+         
+        </div>
+    </div>
+    <div class="col">
+      <div  style="height:200px;width:200px" id="canvas">
+       
+          <canvas id="Temp"></canvas>
+        </div>
+      </div>
+  </div>
+</div>
+<br>
+
 
  <div class="footer">
     <p>Copyright&copy at Fasal </p>
@@ -117,20 +149,26 @@
           var x = []
           var y = []
           var z = []
-
+          var time=[]
           for (var i = 0; i < data.Items.length; i++) {
             // console.log(parseInt(data.Items[i].Tmpr.Humidity))
             //console.log(parseInt(data.Items[i].Tmpr.Moisture))
+            time.push(data.Items[i].Time)
             x.push(parseInt(data.Items[i].Tmpr.Humidity))
             y.push(parseInt(data.Items[i].Tmpr.Moisture))
             z.push(parseInt(data.Items[i].Tmpr.Temperature))
-
+            
             //  var div=document.createElement("div");
             //  var br=document.createElement("br")
             //  div.innerHTML=JSON.stringify(data.Items[i],2)
             // container.appendChild(br)
             // container.appendChild(div)
           }
+          var last_10_humidity=x.slice(-10)
+          var last_10_moisture=y.slice(-10)
+          var last_10_Temp=z.slice(-10)
+
+          var last_10_time=time.slice(-10)
           var sum = x => x.reduce((a, b) => a + b, 0); // summation function
 
           var Humidity = sum(x)
@@ -277,6 +315,96 @@
               cutout:50
             }
           })
+
+
+          var Hum_line=document.getElementById('Hum').getContext('2d')
+          var Moist_line=document.getElementById('Moist').getContext('2d')
+          var Temp_line=document.getElementById('Temp')
+
+          let Hum_chart=new Chart(Hum_line,{
+            type:'line',
+            data:{
+              labels: last_10_time,
+              datasets: [{
+                label:'Humidity',
+                data: 
+                  last_10_humidity
+                ,
+                tension:0.6,
+                //backgroundColor:'green',
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.6)',
+                  
+                ],
+                borderWidth: 1,
+                borderColor: '#777',
+                hoverBorderWidth: 3,
+                hoverBorderColor: '#000'
+              }]
+            },
+            options:{
+              circumference: 180,
+              rotation:-90,
+              cutout:50
+            }
+          })
+
+          let Moist_chart=new Chart(Moist_line,{
+            type:'line',
+            data:{
+              labels: last_10_time,
+              datasets: [{
+                label:'Moisture',
+                data: 
+                  last_10_moisture
+                ,
+                tension:0.6,
+                //backgroundColor:'green',
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.6)',
+                  
+                ],
+                borderWidth: 1,
+                borderColor: '#777',
+                hoverBorderWidth: 3,
+                hoverBorderColor: '#000'
+              }]
+            },
+            options:{
+              circumference: 180,
+              rotation:-90,
+              cutout:50
+            }
+          })
+         
+          let Temp_chart=new Chart(Temp_line,{
+            type:'line',
+            data:{
+              labels: last_10_time,
+              datasets: [{
+                label:'Temperature',
+                data: 
+                  last_10_Temp
+                ,
+                tension:0.2,
+                //backgroundColor:'green',
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.6)',
+                  
+                ],
+                borderWidth: 1,
+                borderColor: '#777',
+                hoverBorderWidth: 3,
+                hoverBorderColor: '#000'
+              }]
+            },
+            options:{
+              circumference: 180,
+              rotation:-90,
+              cutout:50
+            }
+          })
+
         
         }
       });
