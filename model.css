@@ -4,7 +4,7 @@
     background: #00F260;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #0575E6, #00F260); 
-    color: white;
+    color: white!important;
     text-align: center;
     height:50px;
     border-bottom: 2px solid #fff;
@@ -34,3 +34,10 @@
       width: 50px;
       margin: 50%;
   }
+  .navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: white;
+}
+.row{
+    padding-left: 100px;
+}

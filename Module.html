@@ -11,7 +11,7 @@
 
  
     <title>Login</title>
-    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="./model.css">
     <script src="./Model.js"></script>
 </head>
 <body>
@@ -37,12 +37,12 @@
 <br>
 <br>
 <br>
-<div class="container">
-    <div class="row content">
+
+   
      
        
            
-              <div class="col-md-6 mb-6">
+              <!-- <div class="col-md-6 mb-6">
                 <img src="./Thermo meter.svg" alt="Temperature" class="img-fluid" width="100px">
                 <br>
                 <button class="btn btn-outline-primary" onclick="Checktemperature(); return false;">Check Temperature</button>
@@ -53,10 +53,41 @@
                 <img src="./wet-svgrepo-com.svg" alt="Temperature" class="img-fluid" width="100px">
                 <br>
                 <button class="btn btn-outline-primary" onclick="CheckMoisture(); return false;">Check Moisture</button>
+             </div> -->
+             <div class="container">            
+                <div class="row content">
+             <!-- <div class="row" id="status">
+              <div class="col-4"><img src="./Thermo meter.svg"/>
+              <button class="btn btn-outline-primary">Check Temperature</button></div>
+               <div class="col-4"></div>
+              <div class="col-4"><img src="./humidity-svgrepo-com.svg"/>
+                <button class="btn btn-outline-primary">Check Moisture</button>
+              </div>
+          </div> -->
+          <div class="col-xs-12 col-md-8">
+            <div class="row">
+             <div class="col-xs-4 col-md-3">
+             <img src="./Thermo meter.svg" class="img-responsive img-fluid" alt="Logo" >
+             <div class="btn btn-outline-primary"onclick="Checktemperature(); return false;" >Check Temperature</div>
+
              </div>
-             
+             <div class="col-xs-4 col-md-3">
+          
+             </div>
+             <div class="col-xs-4 col-md-3">
+          
+            </div>
+             <div class="col-xs-4 col-md-3">
+             <img src="./humidity-svgrepo-com.svg" class="img-responsive" alt="Logo">
+             <button class="btn btn-outline-primary" onclick="CheckMoisture(); return false;">Check Moisture</button>
+             </div>
+           
+            </div>
+           </div>
         </div>
-    </div>
+      </div>
+
+  
    
 </div>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
