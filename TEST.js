@@ -30,11 +30,7 @@ AWS.config.update({
           y.push(parseInt(data.Items[i].Tmpr.Moisture))
           z.push(parseInt(data.Items[i].Tmpr.Temperature))
 
-          //  var div=document.createElement("div");
-          //  var br=document.createElement("br")
-          //  div.innerHTML=JSON.stringify(data.Items[i],2)
-          // container.appendChild(br)
-          // container.appendChild(div)
+        
         }
         var last_10_humidity = x.slice(-10)
         var last_10_moisture = y.slice(-10)

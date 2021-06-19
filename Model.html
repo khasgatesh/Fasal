@@ -8,16 +8,29 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
  
     <title>Login</title>
     <link rel="stylesheet" href="./login.css">
     <script src="./Model.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
-        <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">Fasal</span>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Fasal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="./Test.html">Dashboard</a>
+            </li>
+           
+            <li class="nav-item active">
+                <a class="nav-link" href="./login.html">Logout</a>
+              </li>
+           
+          </ul>
         </div>
       </nav>
 <br>
@@ -27,26 +40,88 @@
 <div class="container">
     <div class="row content">
      
-        <div class="col-md-6">
-            <h3>Sign In </h3>
-            <form action="">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Select Crop</option>
-                    <option value="Sugarcane">SugarCane</option>
-                    <option value="Jowar">Jowar</option>
-                    <option value="Cotton">Cotton</option>
-                  </select>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" class="form-control" required>
-                </div>
-                <a class="btn btn-outline-primary" href="./Test.html" role="button" >Sign In</a>
-                <button class="btn btn-outline-primary" onclick="signin();">Login</button>
-            </form>
-            
+       
+           
+              <div class="col-md-6 mb-6">
+                <img src="./Thermo meter.svg" alt="Temperature" class="img-fluid" width="100px">
+                <br>
+                <button class="btn btn-outline-primary" onclick="Checktemperature(); return false;">Check Temperature</button>
+             </div>
+
+             
+             <div class="col-md-6 mb-6">
+                <img src="./wet-svgrepo-com.svg" alt="Temperature" class="img-fluid" width="100px">
+                <br>
+                <button class="btn btn-outline-primary" onclick="CheckMoisture(); return false;">Check Moisture</button>
+             </div>
+        
+             
+           
         </div>
     </div>
+   
 </div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">SugarCane</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span> </button>
+         
+        </div>
+        <div class="modal-body">
+            <p class="h4">Causes:   </p>
+
+            <p class="h5">Reduces the repining and quality of Sugarcane</p>
+            <p class="h4">Temperature </p>
+
+            <p class="h5">Ideal Temperature : 24 &#8451;</p>
+            <p id="ideal" class="h5"></p>
+             
+            <p class="h4">Solutions</p>
+             <p class="h5">Spray polaris and ethrel to improve the repining</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="Sugarcane" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Sugarcane</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        
+        </div>
+        <div class="modal-body">
+            <p class="h4">Moisture</p>
+
+            <p class="h5">Ideal Moisture : 25%</p>
+            <p id="Moist" class="h5"></p>
+            <p class="h4">Causes:   </p>
+          <p class="h5">Less Availability of Irrigation of water</p>
+            <h4>Solutions</h4>
+            <p class="h5">Early Planting</p>
+            <p class="h5">Grownup crop withstand better than young crop</p>
+             <p class="h5">Nov-Jan planting is Good</p>
+             <p class="h5">Thrash mulching help to reduce evaporation from soil surface</p>
+           <p></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

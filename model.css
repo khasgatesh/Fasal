@@ -4,7 +4,7 @@
     background: #00F260;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #0575E6, #00F260); 
-  
+    color: white;
     text-align: center;
     height:50px;
     border-bottom: 2px solid #fff;
@@ -18,8 +18,19 @@
     
   }
   .content{
-      margin:8%;
+      margin:10%;
       background-color: #fff;
       padding:4rem 1rem 4rem 1rem ;
       box-shadow: 0 0 5px 5px rgb(0,0,0,.05);
+  }
+
+  button{
+      
+    left:20px;
+  }
+  img{
+      vertical-align: middle;
+      border-style: none;
+      width: 50px;
+      margin: 50%;
   }
