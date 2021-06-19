@@ -64,13 +64,13 @@
 <div class="container px-4">
     <div class="row gx-5">
       <div class="col">
-        <div  style="height:200px;width:200px" id="canvas">
+        <div  style="height:200px;width:200px" id="canvas1">
           
             <canvas id="hum"></canvas>
           </div>
       </div>
       <div class="col">
-        <div  style="height:200px;width:200px" id="canvas">
+        <div  style="height:200px;width:200px" id="canvas1">
             
             <canvas id="moist">
             
@@ -79,7 +79,7 @@
           </div>
       </div>
       <div class="col">
-        <div  style="height:200px;width:200px" id="canvas">
+        <div  style="height:200px;width:200px" id="canvas1">
            
             <canvas id="temp"></canvas>
           </div>
@@ -361,7 +361,7 @@
                 tension:0.6,
                 //backgroundColor:'green',
                 backgroundColor: [
-                  'rgba(255, 99, 132, 0.6)',
+                'rgba(54, 162, 235, 0.6)',
                   
                 ],
                 borderWidth: 1,
@@ -389,7 +389,7 @@
                 tension:0.2,
                 //backgroundColor:'green',
                 backgroundColor: [
-                  'rgba(255, 99, 132, 0.6)',
+                'rgba(153, 102, 255, 0.6)',
                   
                 ],
                 borderWidth: 1,
@@ -401,7 +401,19 @@
             options:{
               circumference: 180,
               rotation:-90,
-              cutout:50
+              cutout:50,
+              scales: {
+    xAxes: [{
+      gridLines: {
+        display: false
+      }
+    }],
+    yAxes: [{
+      gridLines: {
+        display: false
+      }
+    }]
+  }
             }
           })
 
